@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			Pokemones: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +16,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			/**getPokemones: () => {
+				fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
+					.then(result => result.json())
+					.then(aa => {
+						for (let i = 0; i < aa.results.length; i++) {
+							fetch(aa.results[i].url)
+								.then(res =>
+									
+									 res.json())
+								.then(res => {			
+									setStore(res)
+									//setStore(prevArray => [...prevArray,re])
+									console.log(res)
+									//setStore(prevArray => [...prevArray,])
+								}
+								)
+						} 
+					}
+					)
+					.catch(error => console.log('error', error));
+
+			},**/
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -38,6 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			}
+
 		}
 	};
 };
