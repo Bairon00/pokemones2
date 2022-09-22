@@ -1,8 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			Pokemones: [],
-			demo: [
+			fetchPokemones: [],
+				Pokemones: [],
+			demo: [[
 				{
 					title: "FIRST",
 					background: "white",
@@ -13,20 +14,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			]]
 		},
 		actions: {
+			getPokemones1: async () => {
+
+				const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+				const { results } = await resp.json();
+
+				const pokemones = [];
+				results.forEach(async (pokemon) => {
+					const single_resp = await fetch(pokemon.url);
+					const data = await single_resp.json();
+					pokemones.push(data)
+				});
+				setStore({ Pokemones: pokemones})
+			},
+
+
 			/**getPokemones: () => {
 				fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
 					.then(result => result.json())
 					.then(aa => {
 						for (let i = 0; i < aa.results.length; i++) {
 							fetch(aa.results[i].url)
-								.then(res =>
-									
-									 res.json())
+								.then(res =>res.json())
 								.then(res => {			
-									setStore(res)
+									setStore({Pokemones:res})
 									//setStore(prevArray => [...prevArray,re])
 									console.log(res)
 									//setStore(prevArray => [...prevArray,])
@@ -37,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					)
 					.catch(error => console.log('error', error));
 
-			},**/
+			},*/
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
