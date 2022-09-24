@@ -24,7 +24,7 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 					<Navbar />
 					<Switch>
-						<Route exact path="/Inicio">
+						<Route exact path="/">
 							<Inicio />
 						</Route>
 						<Route exact path="/Pokemones">

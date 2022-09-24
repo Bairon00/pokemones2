@@ -3,6 +3,7 @@ import { Context } from "../store/appContext"
 import PropTypes from "prop-types";
 import { checkPropTypes } from "prop-types";
 import { CardInicio } from "../component/CardInicio";
+import {CardPokemones} from "../component/CardPokemones"
 
 export const Pokemones = () => {
    
@@ -13,9 +14,9 @@ export const Pokemones = () => {
     return (
         <div>
             {store.Pokemones.map((obj,indice)=>{
-                return(
-                    <li>{obj.name}</li>
-                )
+                return<CardPokemones
+                titulo={obj.name}
+                url={obj.sprites.front_default}/>
             })}
         </div>
     )

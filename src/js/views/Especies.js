@@ -6,6 +6,26 @@ export const Especies = () => {
     return (
         <div className="container">
             <div className="row">
+            <CardInicio
+                    titulo="fire"
+                    ruta="/Especies/fire"
+                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
+                    bt="¡Atrápalos Ya!" />
+                    <CardInicio
+                    titulo="water"
+                    ruta="/Especies/water"
+                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
+                    bt="¡Atrápalos Ya!" />
+                     <CardInicio
+                    titulo="electric"
+                    ruta="/Especies/electric"
+                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
+                    bt="¡Atrápalos Ya!" />
+                     <CardInicio
+                    titulo="psychic"
+                    ruta="/Especies/psychic"
+                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
+                    bt="¡Atrápalos Ya!" />
                 <CardInicio
                     titulo="Normales"
                     ruta="/Especies/normal"
