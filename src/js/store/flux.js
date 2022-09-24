@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			fetchPokemones: [],
-				Pokemones: [],
+			Pokemones: [],
 			demo: [[
 				{
 					title: "FIRST",
@@ -18,17 +18,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			getPokemones1: async () => {
-
-				const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+				const store= getStore();
+				const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10");
 				const { results } = await resp.json();
-
-				const pokemones = [];
+				console.log(results)
 				results.forEach(async (pokemon) => {
 					const single_resp = await fetch(pokemon.url);
 					const data = await single_resp.json();
-					pokemones.push(data)
+					setStore({Pokemones:[...store.Pokemones, data]})
 				});
-				setStore({ Pokemones: pokemones})
+				
 			},
 
 
