@@ -4,74 +4,88 @@ import { CardInicio } from "../component/CardInicio";
 export const Especies = () => {
 
     return (
-        <div className="container">
-            <div className="row">
+        <div className="container row " style={{marginLeft:"180px"}}>
+            
             <CardInicio
-                    titulo="fire"
+                    titulo="Fire"
                     ruta="/Especies/fire"
-                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
-                    bt="¡Atrápalos Ya!" />
+                    url="https://www.pngmart.com/files/13/Charmander-PNG-Clipart.png"
+                    bt="¡Atrápalos Ya!" 
+                    tamaño="250px"/>
                     <CardInicio
-                    titulo="water"
+                    titulo="Water"
                     ruta="/Especies/water"
-                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
-                    bt="¡Atrápalos Ya!" />
+                    url="https://images.wikidexcdn.net/mwuploads/wikidex/e/e3/latest/20160309230820/Squirtle.png"
+                    bt="¡Atrápalos Ya!"
+                    tamaño="250px" />
                      <CardInicio
-                    titulo="electric"
+                    titulo="Electric"
                     ruta="/Especies/electric"
-                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
-                    bt="¡Atrápalos Ya!" />
+                    url="https://www.pngmart.com/files/2/Pikachu-PNG-HD.png"
+                    bt="¡Atrápalos Ya!" 
+                    tamaño="250px"/>
                      <CardInicio
-                    titulo="psychic"
+                    titulo="Psychic"
                     ruta="/Especies/psychic"
-                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
-                    bt="¡Atrápalos Ya!" />
+                    url="https://images.wikidexcdn.net/mwuploads/wikidex/c/cc/latest/20200620214830/Abra_EpEc.png"
+                    bt="¡Atrápalos Ya!"
+                    tamaño="250px"/>
                 <CardInicio
                     titulo="Normales"
                     ruta="/Especies/normal"
-                    url="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png"
-                    bt="¡Atrápalos Ya!" />
+                    url="https://images.wikidexcdn.net/mwuploads/wikidex/d/d6/latest/20200307022931/Raticate.png"
+                    bt="¡Atrápalos Ya!"
+                    tamaño="250px"/>
                  <CardInicio
                     titulo="Fighting"
                     ruta="/Especies/fighting"
                     bt="¡Atrápalos Ya!"
-                    url="https://i0.wp.com/gameinpost.com/wp-content/uploads/2021/03/80474e1bb104c5b7835b4b213784306b.jpg?resize=696%2C911&ssl=1" />
+                    tamaño="250px"
+                    url="https://images.gameinfo.io/pokemon/256/p106f321.webp" />
                 <CardInicio
                     titulo="Flying"
                     ruta="/Especies/flying"
                     bt="¡Atrápalos Ya!"
+                    tamaño="250px"
                     url="https://images.saymedia-content.com/.image/t_share/MTc0NDU3NTUzODkwMDU5OTEw/top-10-early-obtained-flying-pokemon.png" />
                  <CardInicio
                     titulo="poison"
                     ruta="/Especies/poison"
                     bt="¡Atrápalos Ya!"
+                    tamaño="250px"
                     url="https://pngimage.net/wp-content/uploads/2018/06/grimer-png.png" />
                  <CardInicio
                     titulo="Ground"
                     ruta="/Especies/ground"
                     bt="¡Atrápalos Ya!"
-                    url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-pUOzlekBZ9Tj0dEvdQkucBsIHYMfMI_C1VLQYpa6idUbI1SB05NP217l1zAu5gLwnCA&usqp=CAU" />
+                    tamaño="250px"
+                    url="https://i.pinimg.com/originals/e4/46/46/e446462db9da8c908e04ad8b87ca00bd.png" />
                  <CardInicio
                     titulo="Rock"
                     ruta="/Especies/rock"
                     bt="¡Atrápalos Ya!"
-                    url="https://imgix.ranker.com/user_node_img/3181/63618115/original/onix-fictional-characters-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375" />
+                    tamaño="250px"
+                    url="https://www.pngplay.com/wp-content/uploads/11/Onix-Pokemon-PNG-Background.png" />
                  <CardInicio
                     titulo="Bug"
                     ruta="/Especies/bug"
                     bt="¡Atrápalos Ya!"
-                    url="https://qph.cf2.quoracdn.net/main-qimg-fc8b6b023f8879860ad16b0ed50aa01c-pjlq" />
+                    tamaño="250px"
+                    url="https://i.pinimg.com/originals/e4/ff/92/e4ff92d50da3df37579e7459dac139c0.png" />
                  <CardInicio
                     titulo="Ghost"
                     ruta="/Especies/ghost"
                     bt="¡Atrápalos Ya!"
-                    url="http://pm1.narvii.com/6317/b008deb11a6d63a087c69921ce6858bd1c952874_00.jpg" />
+                    tamaño="250px"
+                    url="https://www.pngplay.com/wp-content/uploads/11/Haunter-Pokemon-PNG-HD-Photos.png" />
                  <CardInicio
                     titulo="Steel"
                     ruta="/Especies/steel"
                     bt="¡Atrápalos Ya!"
-                    url="https://nacionanime.com/wp-content/uploads/2021/09/Pokemon-Aggron.png" />
+                    tamaño="250px"
+                    url="https://nacionanime.com/wp-content/uploads/2021/09/Pokemon-Aggron.png" 
+                    top="200px"/>
 
-            </div></div>
+            </div>
     )
 }

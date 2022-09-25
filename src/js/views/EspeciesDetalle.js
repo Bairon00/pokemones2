@@ -7,25 +7,31 @@ import {CardPokemones} from "../component/CardPokemones"
 export const EspeciesDetalle  = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    console.log(store.Pokemones)
-    console.log(store.Pokemones)
     return (
-        <li>
-            {store.Pokemones.map((obj, indice) => {
+        <div className="container row " style={{marginLeft:"80px",marginTop:"-80px"}}>
+            {store.Pokemones.map((obj, indic) => {
                 if (obj.types[0].type.name == params.name) {
                     return<CardPokemones
                     titulo={obj.name}
-                    url={obj.sprites.front_default}/>
+                    url={obj.sprites.front_default}
+                    indice={obj.id}
+                    bt="¡Atrápalos Ya!"
+                    ruta={"/detalle/"+obj.name}/>
                 }
                 else if (obj.types[1]?.type.name == params.name) {
                     return<CardPokemones
                     titulo={obj.name}
-                    url={obj.sprites.front_default}/>
+                    url={obj.sprites.front_default}
+                    indice={obj.id}
+                    bt="¡Atrápalos Ya!"
+                    ruta={"/detalle/"+obj.name}
+                    />
+                    
                 }
 
 
             })}
-        </li>
+        </div>
     )
 
 

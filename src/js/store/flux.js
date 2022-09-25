@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			fetchPokemones: [],
+			pokemonesFavoritos: [],
 			Pokemones: [],
 			demo: [
 				{
@@ -17,40 +17,48 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			
+
+
+
+
 			getPokemones1: async () => {
-				const store= getStore();
+				const store = getStore();
 				const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
 				const { results } = await resp.json();
-				console.log(results)
 				results.forEach(async (pokemon) => {
 					const single_resp = await fetch(pokemon.url);
 					const data = await single_resp.json();
-					setStore({Pokemones:[...store.Pokemones, data]})
+					setStore({ Pokemones: [...store.Pokemones, data] })
 				});
-				
+
 			},
+			pokemonesFavoritos: (id) => {
+				const store = getStore();
+				var aa=true;
+
+				for (let j = 0; j < store.pokemonesFavoritos?.length; j++) {
+					if(id == store.pokemonesFavoritos[j].id) aa=false;
+				}
+				for (let i = 0; i < store.Pokemones.length; i++) {
+					if (id == store.Pokemones[i].id && aa) 
+						setStore({ pokemonesFavoritos: [...store.pokemonesFavoritos, store.Pokemones[i]] })
+				
+				}
+			},
+			eliminarPokemon: (id)=>{
+				const store = getStore();
+				let pokemones2=[];
+
+				for (let j = 0; j < store.pokemonesFavoritos.length; j++){
+					if(id != store.pokemonesFavoritos[j].id) pokemones2.push(store.pokemonesFavoritos[j])
+				}
+
+				setStore({pokemonesFavoritos : pokemones2})
 
 
-			/**getPokemones: () => {
-				fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
-					.then(result => result.json())
-					.then(aa => {
-						for (let i = 0; i < aa.results.length; i++) {
-							fetch(aa.results[i].url)
-								.then(res =>res.json())
-								.then(res => {			
-									setStore({Pokemones:res})
-									//setStore(prevArray => [...prevArray,re])
-									console.log(res)
-									//setStore(prevArray => [...prevArray,])
-								}
-								)
-						} 
-					}
-					)
-					.catch(error => console.log('error', error));
 
-			},*/
+			},
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

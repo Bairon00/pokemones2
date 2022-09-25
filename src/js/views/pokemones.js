@@ -4,19 +4,23 @@ import PropTypes from "prop-types";
 import { checkPropTypes } from "prop-types";
 import { CardInicio } from "../component/CardInicio";
 import {CardPokemones} from "../component/CardPokemones"
+import { useParams } from "react-router";
 
 export const Pokemones = () => {
-   
-    const [lista, setLista] = useState([])
+    const params = useParams();
     const { store, actions } = useContext(Context);
     
-    console.log(store.Pokemones)
     return (
-        <div>
+        <div className="container row " style={{marginLeft:"80px",marginTop:"-80px"}}>
             {store.Pokemones.map((obj,indice)=>{
                 return<CardPokemones
                 titulo={obj.name}
-                url={obj.sprites.front_default}/>
+                url={obj.sprites.front_default}
+                indice={obj.id}
+                
+                
+    
+                />
             })}
         </div>
     )

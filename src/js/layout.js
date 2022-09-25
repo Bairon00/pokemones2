@@ -13,6 +13,9 @@ import { Inicio } from "./views/Inicio";
 import { Pokemones } from "./views/pokemones";
 import { EspeciesDetalle } from "./views/EspeciesDetalle";
 import { Especies } from "./views/Especies";
+import { Favoritos } from "./views/Favoritos";
+import { PokemonDetalle } from "./views/pokemonDetalle.js";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -35,6 +38,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/Especies/:name">
 							<EspeciesDetalle />
+						</Route>
+						<Route exact path="/detalle/:name">
+							<PokemonDetalle/>
+						</Route>
+						<Route exact path="/Favoritos">
+							<Favoritos/>
 						</Route>
 						<Route>
 							<h1>Esta ruta no la conocemos</h1>
